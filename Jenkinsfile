@@ -17,8 +17,22 @@ pipeline{
 			    	steps{
 			    		sh 'bash -x /var/lib/jenkins/jenstatus.sh'
 			    	}
-			    }
+			    }  
 			}	
 		}
+        stage('3-Parallelpipeline'){
+            parallel{
+                stage('1-parallelsubmark'){
+                    steps{
+                        sh 'bash -x /var/lib/jenkins/workspace/Appbankparallelpipeline/mark.sh'
+                    }
+                }
+                stage('2-parallelsubevert'){
+                    steps{
+                        sh 'bash -x /var/lib/jenkins/workspace/Appbankparallelpipeline/evert.sh'
+                    }
+                }
+            }
+        }
 	}
 }
