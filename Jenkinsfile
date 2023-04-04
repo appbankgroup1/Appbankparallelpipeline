@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage('1-clone'){
 			steps{
-				echo "we are Appbank Group 1 Engineers"
+				echo "we are Appbank Group 1 Engineers 1"
 			}
 		}
 		stage('2-Parallelpipeline'){
